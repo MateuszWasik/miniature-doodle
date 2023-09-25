@@ -3,13 +3,11 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Features from '~/components/widgets/Features.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
-
-import Stats from '~/components/widgets/Stats.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import FirstImage from '~/assets/images/artcenter_9.jpg';
+import SecondImage from '~/assets/images/artcenter_5.jpg';
+import ThirdImage from '~/assets/images/artcenter_2.jpg';
 
 const metadata = {
   title: 'ArtCenter - Śląski Serwis Floty',
@@ -18,33 +16,19 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="header">
-    <Header />
+    <Header isSticky />
   </Fragment>
-
-  <!-- Hero2 Widget ******************* -->
-
-  <!-- <Hero callToAction2={{ text: 'Skontaktuj się z nami', href: '' }}>
-    <Fragment slot="title">
-      Najlepszy <span class="text-accent dark:text-white highlight">Śląski Serwis Floty</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Wieloletnie doświadczenie we współpracy z klientami flotowymi gwarantuje odpowiednią jakość oraz niestandardowe
-      rozwiązania, które do minimum ograniczają czas potrzebny do wykonania przeglądu lub usunięcia awarii. Specjalne
-      programy flotowe z gwarancją mobilności włącznie.
-    </Fragment>
-  </Hero> -->
 
   <Hero2
     tagline=""
     callToAction2={{ text: 'Skontaktuj się z nami', href: '#contact' }}
     image={{
-      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AstroWind Hero Image',
+      src: FirstImage.src,
+      alt: 'ArtCenter Workshop Image',
     }}
   >
     <Fragment slot="title">
-      Najlepszy <span class="text-accent dark:text-white highlight">Śląski Serwis Floty</span>
+      <span class="text-accent text-gray-700 dark:text-white highlight">ŚLASKI SERWIS FLOTY</span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -54,70 +38,29 @@ const metadata = {
     </Fragment>
   </Hero2>
 
-  <Features2
-    title="O nas"
-    subtitle="Jesteśmy firmą, która od ponad 13 lat zajmuje się mechaniką samochodową oraz serwisem firmowych flot na terenie całego województwa śląskiego. Nasze doświadczenie, nowoczesny warsztat oraz profesjonalna załoga gwarantują Tobie oraz Twojej flocie stałą mobilność."
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    title="Dlaczego warto wybrać ArtCenter?"
-    columns={2}
-    items={[
-      {
-        title: 'Jakość, a nie jakoś',
-        description:
-          'W naszym nowym, nowoczesnym warsztacie szybko, sprawnie i profesjonalnie dokonujemy napraw oraz przeglądów.',
-        icon: 'tabler:layers-union',
-      },
-      {
-        title: 'Gwarancja mobilności',
-        description: `Dzięki naszej flocie samochodów zastępczych, potrafimy zapewnić, ze Twoja firma będzie ciągle w ruchu.`,
-        icon: 'tabler:artboard',
-      },
-      {
-        title: 'Specjalne programy flotowe',
-        description:
-          'Do kazdego z naszych klientów podchodzimy indywidualnie i wspólnie dobieramy odpowiednie rozwiązania.',
-        icon: 'tabler:writing',
-      },
-      {
-        title: 'Z szacunku dla Twojego czasu',
-        description: `Nie mozesz odstawić osobiście swojego samochodu? Nie ma sprawy, my przyjedziemy odebrać go od Ciebie.`,
-        icon: 'tabler:podium',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     items={[
       {
         title: 'Cenimy Twój czas',
         description:
-          'Jesteśmy świadomi, ze znalezienie czasu na przywiezienie samochodu do warsztatu moze być wyzwaniem. Dlatego wychodzimy naprzeciw naszych klientów.',
+          'Odpręż się w naszej poczekalni przy kawie lub herbacie. W międzyczasie my zajmiemy się Twoim samochodem.',
       },
       {
-        title: 'Daj nam tylko znać',
-        description: `Posiadamy zaplecze do tego aby bezpiecznie i sprawnie odebrać od Ciebie samochód i przewieźć go do naszego warsztatu. `,
+        title: 'Ty pracujesz, my naprawiamy',
+        description: `Posiadamy odpowiednie zaplecze do tego abyś mógł w spokoju i wygodnie popracować.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      src: SecondImage.src,
       alt: 'Startup Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Auto do naprawy odbierzemy od Ciebie osobiście
+        Serwis w którym czekanie na samochód staję się przyjemnością <br /><span class="text-2xl"
+          >Czekaj z klasą, u nas to standard</span
+        >
       </h3>
     </Fragment>
 
@@ -125,99 +68,30 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
-
-  <!-- <Content
-    isAfterContent={true}
-    items={[
-      {
-        title: 'Description:',
-        description: `For SaaS businesses, user experience is key. AstroWind enhances showcasing SaaS solutions intuitively. The template's Astro 2.0 and Tailwind CSS integration guarantees user-friendly experience, mirroring your software's efficiency. Customize pages to communicate SaaS value and solutions for your audience.`,
-      },
-      {
-        title: 'Benefits:',
-        description: `Ensuring a cohesive and user-centric design for your SaaS website. <br /> Effectively communicate complex SaaS features through visual aids, animations, and interactive elements. <br /> Prioritize user needs and pain points through well-structured layouts and clear navigation. <br /> Encourage visitors to take action with strategically placed CTAs. <br /> Ensures your SaaS website works seamlessly across all devices.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
-      alt: 'SaaS Businesses Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        SaaS showcase: <br /><span class="text-2xl">Streamlining user experience</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content> -->
-
-  <!-- Content Widget **************** -->
-
-  <!-- <Content
-    isReversed
-    isAfterContent={true}
-    items={[
-      {
-        title: 'Description:',
-        description: `Your portfolio is your masterpiece, and AstroWind is your canvas. Whether you're a designer, photographer, artist, or any other creative professional, AstroWind empowers you to showcase your work with elegance and sophistication. Tailored to highlight your creative projects, AstroWind's templates offer a visually immersive experience that lets your portfolio shine.`,
-      },
-      {
-        title: 'Benefits:',
-        description: `Serve as a captivating backdrop to showcase your creative work, capturing attention and leaving a lasting impression. <br /> Tailor your portfolio to reflect your unique style and artistic vision. <br /> Prioritizes visuals, allowing you to present your work in high-resolution detail that draws viewers into your creations. <br /> Enables seamless navigation for effortless portfolio exploration.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Portfolio Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Creative portfolios: <br /><span class="text-2xl">Highlighting your work</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content> -->
-
-  <Stats
-    title="ArtCenter w liczbach"
-    stats={[
-      { title: 'W pełni wyposazonych stanowisk serwisowych', amount: '5' },
-      { title: 'Nowoczesne stanowisko kontroli pojazdów', amount: '1' },
-      { title: 'Lat na rynku', amount: '13+' },
-      { title: 'Samochodów obsługiwanych miesięcznie', amount: '50' },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
 
   <Content
     items={[
       {
-        title: 'Pewne i sprawdzone',
-        description: `W naszej flocie serwisowej posiadamy szeroki zakres samochodów tak abyś jak najmniej odczuł brak swojego samochodu na czas naprawy`,
+        title: 'Zarezerwuj samochód zastępczy',
       },
       {
-        title: 'Z dostawą prosto do domu',
-        description: `Jezeli z braku czasu badz innych nieprzewidzanych sytuacji nie masz czasu odebrać samochodu z naszej firmy, my przywieziemy go do Ciebie.`,
+        title: 'Skorzystaj z usługi odbioru pojazdu',
+      },
+      {
+        title: 'Odkryj miasto na dwóch kołach - wypożycz rower',
+      },
+      {
+        title: 'A może eko? Przygotowaliśmy dla Ciebie hulajnogę elektryczną',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Small Business Image',
+      src: ThirdImage.src,
+      alt: 'ArtCenter Front Workshop Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Potrzebujesz samochód zastępczy? <br /><span class="text-2xl">Zadzwoń do nas</span>
+        Wizyta w serwisie? <br /><span class="text-2xl">Nie zmieniaj planów</span>
       </h3>
     </Fragment>
 
@@ -225,51 +99,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Pricing Widget ******************* -->
-  <!-- 
-  <Pricing
-    title="Flexible pricing plans"
-    prices={[
-      {
-        title: 'free',
-        subtitle: 'Access to core features and a wide range of templates',
-        price: '0',
-        period: '/ month',
-        callToAction: {
-          targetBlank: true,
-          text: 'Get Started for Free',
-          href: '#',
-        },
-      },
-      {
-        title: 'pro',
-        subtitle: 'Premium templates and advanced customization',
-        price: 15,
-        period: '/ Month',
-        callToAction: {
-          targetBlank: true,
-          text: 'Upgrade to Pro',
-          href: '#',
-        },
-        hasRibbon: true,
-        ribbonTitle: 'popular',
-      },
-      {
-        title: 'Enterprise',
-        subtitle: 'Tailored solutions for large-scale projects',
-        price: 45,
-        period: '/ Month',
-        callToAction: {
-          targetBlank: true,
-          text: 'Unlock Enterprise Features',
-          href: '#',
-        },
-      },
-    ]}
-  /> -->
-
-  <!-- Steps2 Widget ****************** -->
 
   <Steps2
     id="contact"
